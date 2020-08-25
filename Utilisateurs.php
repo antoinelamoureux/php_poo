@@ -4,12 +4,27 @@ class Utilisateurs {
     private $prenom;
     private $age = 23;
     private $email;
+    private $note;
 
-    public function __construct($nom, $prenom, $email) {
+    const NREF_BASSE = 10;
+    const NREF_HAUTE = 15;
+
+    public function __construct($nom, $prenom, $email, $note) {
         echo "Je suis le constructeur";
         $this->setNom($nom);
         $this->setPrenom($prenom);
         $this->setEmail($email);
+        $this->setNote($note);
+    }
+
+    function degreImplication() {
+        if ($this->getNote() >= self::NREF_HAUTE) {
+            echo 'La contribution de cet utilisateur est excellente';
+        } elseif ($this->getNote() >= self::NREF_BASSE) {
+            echo 'La contribution de cet utilisateur est moyenne';
+        } else {
+            echo 'La contribution de cet utilisateur est excellente';
+        }
     }
 
     public function seConnecter() {
@@ -25,15 +40,15 @@ class Utilisateurs {
     }
 
     public function setNom($nom) {
-        $this->$nom;
+        $this->$nom = $nom;
     }
 
     public function getNom() {
         return $this->nom;
     }
 
-    public function setPrenom($nom) {
-        $this->$nom;
+    public function setPrenom($prenom) {
+        $this->prenom = $prenom;
     }
 
     public function getPrenom() {
@@ -41,11 +56,19 @@ class Utilisateurs {
     }
 
     public function setEmail($email) {
-        $this->email;
+        $this->email = $email;
     }
 
     public function getEmail() {
         return $this->email;
+    }
+
+    public function setNote($note) {
+        $this->note = $note;
+    }
+
+    public function getNote() {
+        return $this->note;
     }
 
 }

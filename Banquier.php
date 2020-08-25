@@ -22,15 +22,15 @@ class Banquier {
     }
 
     public function setNom($nom) {
-        $this->nom;
+        $this->nom = $nom;
     }
 
     public function getPrenom() { 
-        return $this->nom;
+        return $this->prenom;
     }
 
     public function setPrenom($prenom) {
-        $this->prenom;
+        $this->prenom = $prenom;
     }
 
     public function getGrade() { 
@@ -38,7 +38,7 @@ class Banquier {
     }
 
     public function setGrade($grade) {
-        $this->grade;
+        $this->grade = $grade;
     }
 
     public function getLieuTravail($lieuTravail) { 
@@ -46,6 +46,6 @@ class Banquier {
     }
 
     public function setLieuTravail($lieuTravail) {
-        $this->lieuTravail;
+        $this->lieuTravail = $lieuTravail;
     }
 }

@@ -1,9 +1,17 @@
 <?php
 
 class Produit {
-    protected static $remise;
+    protected $reference;
     protected $name;
     protected $price;
+
+    protected static $remise = 20;
+
+    public function __construct($reference, $name, $price) {
+        $this->reference = $reference;
+        $this->name = $name;
+        $this->price = $price;
+    }
 
     public function getName() {
         return $this->name;
@@ -25,8 +33,11 @@ class Produit {
         return self::$remise; //Valeur de la classe courante.
     }
 
+    public function setRemise($remise) {
+        self::$remise = $remise;
+    }
+
     public function getNewPrice() {
         return $this->price * (1 * self::$remise/100);
     }
-
 }

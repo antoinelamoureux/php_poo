@@ -14,7 +14,7 @@ class Vehicule {
      }
 
     public function setType($type) {
-        $this->type;
+        $this->type = $type;
     }
 
     public function getNbPlaces() {
@@ -22,7 +22,7 @@ class Vehicule {
      }
 
     public function setNbPlaces($nbPlaces) {
-        $this->nbPlaces;
+        $this->nbPlaces = $nbPlaces;
     }
 
 }
